@@ -7,48 +7,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefWidth="600" prefHeight="400" styleClass="nenchinh" stylesheets="@../css/DangNhap.css"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400" prefWidth="600" styleClass="nenchinh" stylesheets="@../css/DangNhap.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DangNhapController">
     <children>
-        <AnchorPane prefHeight="254" prefWidth="351" styleClass="nenphu"
-                    AnchorPane.topAnchor="73" AnchorPane.leftAnchor="124" AnchorPane.rightAnchor="124" AnchorPane.bottomAnchor="73">
+        <AnchorPane prefHeight="254" prefWidth="351" styleClass="nenphu" AnchorPane.bottomAnchor="73" AnchorPane.leftAnchor="124" AnchorPane.rightAnchor="124" AnchorPane.topAnchor="73">
             <children>
-                <Label text="ĐĂNG NHẬP" textFill="#fbfbfb" alignment="CENTER"
-                       AnchorPane.topAnchor="10" AnchorPane.leftAnchor="55" AnchorPane.rightAnchor="55" prefHeight="46">
+                <Label alignment="CENTER" prefHeight="46" text="ĐĂNG NHẬP" textFill="#fbfbfb" AnchorPane.leftAnchor="55" AnchorPane.rightAnchor="55" AnchorPane.topAnchor="10">
                     <font>
-                        <Font name="System Bold" size="21"/>
+                        <Font name="System Bold" size="21" />
                     </font>
                 </Label>
 
-                <TextField promptText="Tài khoản"
-                           AnchorPane.topAnchor="70" AnchorPane.leftAnchor="24" AnchorPane.rightAnchor="24" prefHeight="36"/>
+                <TextField prefHeight="36" promptText="Tài khoản" AnchorPane.leftAnchor="24" AnchorPane.rightAnchor="24" AnchorPane.topAnchor="70" />
 
-                <TextField promptText="Mật khẩu"
-                           AnchorPane.topAnchor="120" AnchorPane.leftAnchor="24" AnchorPane.rightAnchor="24" prefHeight="36"/>
+                <TextField prefHeight="36" promptText="Mật khẩu" AnchorPane.leftAnchor="24" AnchorPane.rightAnchor="24" AnchorPane.topAnchor="120" />
 
-                <Button text="ĐĂNG NHẬP" mnemonicParsing="false" prefHeight="36"
-                        AnchorPane.topAnchor="180" AnchorPane.leftAnchor="70" AnchorPane.rightAnchor="70">
+                <Button mnemonicParsing="false" prefHeight="36" text="ĐĂNG NHẬP" AnchorPane.leftAnchor="70" AnchorPane.rightAnchor="70" AnchorPane.topAnchor="180">
                     <font>
-                        <Font name="System Bold" size="12"/>
+                        <Font name="System Bold" size="12" />
                     </font>
                 </Button>
 
-                <Hyperlink text="Quên mật khẩu" textFill="WHITE" underline="true"
-                           AnchorPane.topAnchor="160" AnchorPane.rightAnchor="24" prefHeight="24" prefWidth="98">
+                <Hyperlink prefHeight="24" prefWidth="98" text="Quên mật khẩu" textFill="WHITE" underline="true" AnchorPane.rightAnchor="24" AnchorPane.topAnchor="160">
                     <font>
-                        <Font name="System Bold Italic" size="12"/>
+                        <Font name="System Bold Italic" size="12" />
                     </font>
                 </Hyperlink>
 
-                <Hyperlink text="Đăng ký" textFill="WHITE" underline="true"
-                           AnchorPane.topAnchor="160" AnchorPane.leftAnchor="24">
+                <Hyperlink text="Đăng ký" textFill="WHITE" underline="true" AnchorPane.leftAnchor="24" AnchorPane.topAnchor="160">
                     <font>
-                        <Font name="System Bold Italic" size="12"/>
+                        <Font name="System Bold Italic" size="12" />
                     </font>
                 </Hyperlink>
             </children>
         </AnchorPane>
     </children>
 </AnchorPane>
-
