@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/MainLayout.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/DangNhap.fxml"));
             Scene scene = new Scene(root);
             Stage loginStage = new Stage(); // Mở stage mới cho login
             loginStage.setTitle("Màn Hình Đăng Nhập");

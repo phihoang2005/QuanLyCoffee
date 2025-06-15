@@ -1,0 +1,13 @@
+HBox,AnchorPane{
+	-fx-background-color: white;
+}
+Button{
+	-fx-background-color: black;
+	-fx-text-fill: white;
+}
+Button,TextField{
+	-fx-background-radius: 10;
+}
+Hyperlink{
+	-fx-text-fill: black;
+}
