@@ -14,13 +14,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="10.0" stylesheets="@../css/Style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" 
+		minHeight="-Infinity" minWidth="-Infinity" 
+		prefHeight="400.0" prefWidth="600.0" spacing="10.0" 
+		stylesheets="@../css/Style.css" 
+		xmlns="http://javafx.com/javafx/23.0.1" 
+		xmlns:fx="http://javafx.com/fxml/1"
+		fx:controller="controller.DangNhapController">
    <children>
       <AnchorPane prefHeight="380.0" prefWidth="275.0" HBox.hgrow="ALWAYS">
          <children>
             <ImageView fitHeight="378.0" fitWidth="280.0" layoutY="1.0" pickOnBounds="true">
                <image>
-                  <Image url="@../image/anhNenDangNhap.jpg" />
+                  <Image url="@../image/anhNenDangNhap.jpg" />	
                </image>
             </ImageView>
          </children>
@@ -29,7 +35,7 @@
          <children>
             <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <VBox prefHeight="380.0" prefWidth="291.0">
+                  <VBox fx:id="formDangNhap" prefHeight="380.0" prefWidth="291.0">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
@@ -48,7 +54,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <TextField id="tenDangNhap" prefHeight="40.0" promptText="Tên đăng nhập" HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="tenDangNhap" prefHeight="40.0" promptText="Tên đăng nhập" HBox.hgrow="ALWAYS" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -56,7 +62,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <TextField id="matKhau" accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Mật khẩu" HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="matKhau" accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Mật khẩu" HBox.hgrow="ALWAYS" onAction="#chonDangNhap" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -64,7 +70,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <Button id="btnDangNhap" mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đăng nhập" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnDangNhap" mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đăng nhập" HBox.hgrow="ALWAYS" onAction="#chonDangNhap" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -75,7 +81,7 @@
                               <Insets />
                            </VBox.margin>
                            <children>
-                              <Hyperlink id="hplQuenMatKhau" prefHeight="20.0" text="Quên mật khẩu?" />
+                              <Hyperlink fx:id="hplQuenMatKhau" prefHeight="20.0" text="Quên mật khẩu?" onAction="#chonQuenMatKhau" />
                            </children>
                         </HBox>
                         <HBox alignment="TOP_RIGHT" prefHeight="20.0" prefWidth="291.0" spacing="10.0">
@@ -91,8 +97,8 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0" spacing="20.0">
                            <children>
-                              <Button id="btnGoogle" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Google" HBox.hgrow="ALWAYS" />
-                              <Button id="btnFacebook" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Facebook" HBox.hgrow="ALWAYS" />
+                              <Button fx:id="btnGoogle" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Google" HBox.hgrow="ALWAYS" onAction="#dangNhapGoogle"/>
+                              <Button fx:id="btnFacebook" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Facebook" HBox.hgrow="ALWAYS" onAction="#dangNhapFacebook" />
                            </children>
                            <VBox.margin>
                               <Insets top="10.0" />
@@ -100,7 +106,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="380.0" prefWidth="291.0" visible="false">
+                  <VBox fx:id="formQuenMatKhau" prefHeight="380.0" prefWidth="291.0" visible="false">
                      <children>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
@@ -119,7 +125,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0" spacing="10.0">
                            <children>
-                              <TextField prefHeight="40.0" prefWidth="99.0" promptText="Số điện thoại" HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="soDienThoai" prefHeight="40.0" prefWidth="99.0" promptText="Số điện thoại" HBox.hgrow="ALWAYS" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -127,7 +133,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <TextField prefHeight="40.0" promptText="Tên đăng nhập" HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="tenDangNhap2" prefHeight="40.0" promptText="Tên đăng nhập" HBox.hgrow="ALWAYS" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />
@@ -135,7 +141,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <TextField accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Mật khẩu" HBox.hgrow="ALWAYS">
+                              <TextField fx:id="matKhau2" accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Mật khẩu" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -147,7 +153,7 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0">
                            <children>
-                              <TextField accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Xác nhận mật khẩu" HBox.hgrow="ALWAYS">
+                              <TextField fx:id="xacNhanMatKhau" accessibleRole="PASSWORD_FIELD" prefHeight="40.0" promptText="Xác nhận mật khẩu" HBox.hgrow="ALWAYS">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -159,8 +165,8 @@
                         </HBox>
                         <HBox prefHeight="40.0" prefWidth="291.0" spacing="10.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đăng nhập" HBox.hgrow="ALWAYS" />
-                              <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đổi mật khẩu" />
+                              <Button fx:id="btnDangNhap" mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đăng nhập" HBox.hgrow="ALWAYS" onAction="#quayLaiDangNhap" />
+                              <Button fx:id="btnDoiMatKhau" mnemonicParsing="false" prefHeight="40.0" prefWidth="291.0" text="Đổi mật khẩu" onAction="#chonDoiMatKhau" />
                            </children>
                            <VBox.margin>
                               <Insets top="20.0" />

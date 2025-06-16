@@ -5,7 +5,10 @@ Button{
 	-fx-background-color: black;
 	-fx-text-fill: white;
 }
-Button,TextField{
+Button:hover,HyperLink:hover{
+	-fx-cursor: hand ;
+}
+Button,TextField,HBox{
 	-fx-background-radius: 10;
 }
 Hyperlink{
