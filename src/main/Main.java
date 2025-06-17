@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
     	ConnectDB.getInstance().connect();
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/DangNhap.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/MainLayout.fxml"));
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);
             Stage loginStage = new Stage(); // Mở stage mới cho login

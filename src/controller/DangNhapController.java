@@ -8,12 +8,20 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import dao.TaiKhoanDAO;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class DangNhapController {
 	@FXML
@@ -28,7 +36,7 @@ public class DangNhapController {
 
 	//Nhấn nút đăng nhập
 	@FXML 
-	public void chonDangNhap() {
+	public void chonDangNhap(ActionEvent event) throws IOException {
 		String tendangnhap=tenDangNhap.getText();
 		String matkhau=matKhau.getText();
 		
@@ -38,8 +46,21 @@ public class DangNhapController {
 		}
 		int ketQua=tkdao.kiemTraTaiKhoan(tendangnhap, matkhau);
 		if(ketQua==1) {
-			showAlert("Thông báo", "Đăng nhập thành công!");
-			lamMoi();
+			
+			try {
+				Parent root = FXMLLoader.load(getClass().getResource("/view/MainLayout.fxml"));
+				Scene scene=new Scene(root);
+				scene.setFill(Color.TRANSPARENT);
+			    Stage stage = new Stage();
+			    stage.setScene(scene);
+			    stage.initStyle(StageStyle.TRANSPARENT);
+			    stage.show();
+	
+			    ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		}else if(ketQua==2) {
 			showAlert("Thông báo", "Mật khẩu sai!");
 			matKhau.requestFocus();
