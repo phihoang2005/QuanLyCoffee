@@ -1,0 +1,58 @@
+.ban{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-border-radius: 10;
+	-fx-cursor: hand;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+.ban:hover{
+	-fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-background-color: #f0f0f0;
+}
+.ban-selected{
+	-fx-background-color: #d0f0c0;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0.3, 0, 4);
+}
+.tenBan{
+	-fx-font-weight: bold;
+}
+.txt-info{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-border-color: black;
+	-fx-border-radius: 10;	
+}
+.btn-datBan{
+	-fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+.btn-datBan:hover{
+	-fx-background-color: #45A049;
+	-fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.btn-huyBan{
+	-fx-background-color: #F44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+.btn-huyBan:hover{
+	-fx-background-color: #D32F2F;
+	-fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.vbox-info{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0.3, 0, 4);
+}

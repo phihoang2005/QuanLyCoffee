@@ -5,6 +5,7 @@
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,18 +15,128 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-radius: 10;" stylesheets="@../css/Main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
    <left>
-      <VBox prefHeight="580.0" prefWidth="150.0" style="-fx-background-color: white; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+      <VBox style="-fx-background-color: white; -fx-background-radius: 10;">
          <children>
-            <ImageView fitHeight="100.0" fitWidth="152.0" pickOnBounds="true">
+            <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true">
                <image>
                   <Image url="@../image/logo2.jpg" />
                </image>
             </ImageView>
-            <Button fx:id="btnTrangChu" mnemonicParsing="false" onAction="#handleTrangChu" prefHeight="41.0" prefWidth="150.0" text="Trang chủ" VBox.vgrow="ALWAYS" />
-            <Button fx:id="btnBanHang" mnemonicParsing="false" onAction="#handleBanHang" prefHeight="41.0" prefWidth="150.0" text="Bán hàng" VBox.vgrow="ALWAYS" />
-            <Button fx:id="btnNhanVien" mnemonicParsing="false" onAction="#handleNhanVien" prefHeight="41.0" prefWidth="150.0" text="Nhân viên" VBox.vgrow="ALWAYS" />
-            <Button fx:id="btnKhachHang" mnemonicParsing="false" onAction="#handleKhachHang" prefHeight="41.0" prefWidth="150.0" text="Khách hàng" VBox.vgrow="ALWAYS" />
-            <Button fx:id="btnThucDon" mnemonicParsing="false" onAction="#handleThucDon" prefHeight="41.0" prefWidth="150.0" text="Thực đơn" VBox.vgrow="ALWAYS" />
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supBanHang" mnemonicParsing="false" onAction="#handleSupBanHang" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Bán hàng">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/banhang.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subBanHang" styleClass="vbox-sub">
+                     <children>
+                        <Button fx:id="btnDatBan" mnemonicParsing="false" onAction="#handleDatBan" styleClass="sub-menu" text="Đặt bàn" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Lập hóa đơn" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Thanh toán" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supMon" mnemonicParsing="false" onAction="#handleSupMon" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Món &amp; NLiệu">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/mon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subMon" styleClass="vbox-sub">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Quản lý món" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Công thức món" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Quản lý nguyên liệu" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Phiếu nhập" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supNhanSu" mnemonicParsing="false" onAction="#handleSupNhanSu" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Nhân sự">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/nhansu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subNhanSu" styleClass="vbox-sub">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Nhân viên" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Tạo tài khoản" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Phân công ca" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Quản lý ca " />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supDoanhThu" mnemonicParsing="false" onAction="#handleSupDoanhThu" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Doanh thu">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/doanhthu.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subDoanhThu" styleClass="vbox-sub">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Hóa đơn" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Báo cáo bán hàng" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Báo cáo nguyên liệu" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supKhuyenMai" mnemonicParsing="false" onAction="#handleSupKhuyenMai" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Khuyến mãi">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/khuyenmai.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subKhuyenMai" styleClass="vbox-sub">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Danh sách khuyến mãi" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Gán món khuyến mãi" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <ToggleButton fx:id="supKhachHang" mnemonicParsing="false" onAction="#handleSupKhachHang" prefHeight="40.0" prefWidth="150.0" styleClass="sup-menu" text="Khách hàng">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" styleClass="icon-menu">
+                           <image>
+                              <Image url="@../icon/khachhang.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></ToggleButton>
+                  <VBox fx:id="subKhachHang" styleClass="vbox-sub">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Danh sách khách hàng" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Đặt bàn" />
+                        <Button mnemonicParsing="false" styleClass="sub-menu" text="Đạt món online" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
          </children>
       </VBox>
    </left>
@@ -61,7 +172,7 @@
                   </MenuButton>
                </children>
             </AnchorPane>
-            <StackPane fx:id="noiDung" layoutY="44.0" prefHeight="637.0" prefWidth="818.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" styleClass="noiDung"/>
+            <StackPane fx:id="noiDung" layoutX="14.0" layoutY="59.0" styleClass="noiDung" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0" />
          </children>
          <BorderPane.margin>
             <Insets left="10.0" />

@@ -1,11 +1,3 @@
-.button-selected{
-	-fx-background-color: #1e1e1e;
-    -fx-text-fill: white;
-    -fx-background-radius: 10;
-    -fx-font-weight: bold;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 0, 2);
-}
 .logo{
 	-fx-background-image: url("../image/logo.jpg");
 	-fx-background-repeat: no-repeat ;
@@ -18,6 +10,9 @@ TextField,Button{
 	-fx-background-color: white;
 	-fx-font-weight: bold;
 }
+Button:hover{
+	-fx-cursor: hand;
+}
 .btnThongTinNhanVien{
 	-fx-background-radius: 10;	
 	-fx-background-color: white;
@@ -27,4 +22,37 @@ TextField,Button{
 	-fx-background-color: white;
 	-fx-background-radius: 10;	
 }
+.sup-menu{
+	-fx-background-color: white;
+	-fx-pref-width: 150px;
+	-fx-pref-height: 40px;
+	-fx-font-weight: bold;
+	-fx-alignment: center-left ;
+	-fx-font-size: 12;
+}
+.sup-menu:hover,.sub-menu:hover{
+	-fx-background-color: gray;
+	-fx-cursor: hand;
+	-fx-text-fill: white;
+}
+.sup-menu:selected{
+	-fx-background-color: #1e1e1e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0.3, 0, 2);
+}
+.vbox-sub{
+	-fx-padding: 0 0 0 10;
+}
+.sub-menu{
+	-fx-background-radius: 0;
+	-fx-pref-width: 140;
+	-fx-font-size: 10;
+	-fx-alignment: center-left ;
+}
+.icon-menu{
+	-fx-fit-to-height: 20;
+	-fx-fit-to-width: 20;
+}
+
 
