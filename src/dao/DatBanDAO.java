@@ -12,6 +12,7 @@ import entity.Ban;
 import entity.DatBan;
 import entity.KhachHang;
 import entity.TrangThaiBan;
+import util.ThongBaoUtil;
 
 public class DatBanDAO {
 	public boolean themDatBan(DatBan datBan) {
@@ -26,7 +27,11 @@ public class DatBanDAO {
 			stmt.setString(4, datBan.getGhiChu());
 			n=stmt.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			if (e.getErrorCode() == 2627 || e.getErrorCode() == 2601) {
+				ThongBaoUtil.showLoi("Khách hàng đã đặt bàn này vào cùng khung giờ!");
+			}else {
+				e.printStackTrace();
+			}
 		}
 		return n>0;
 	}

@@ -28,7 +28,7 @@ public class BanDAO {
 		}
 		return dsBan;
 	}
-	public boolean capNhatTrangThaiTheoMa(Ban ban) {
+	public boolean capNhatTrangThaiTheoBan(Ban ban) {
 		Connection con=ConnectDB.getConnection();
 		int n=0;
 		try {

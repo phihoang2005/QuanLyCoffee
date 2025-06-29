@@ -41,19 +41,19 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtSoDienThoai" onKeyPressed="#pressSoDienThoai" prefHeight="30.0" styleClass="txt-info" />
+                        <TextField fx:id="txtSoDienThoai" onKeyPressed="#pressSoDienThoai" prefHeight="30.0" promptText="0123456789" styleClass="txt-info" />
                         <Label text="Tên khách hàng:">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtTenKhachHang" prefHeight="30.0" styleClass="txt-info" />
+                        <TextField fx:id="txtTenKhachHang" prefHeight="30.0" promptText="Nguyễn Văn A" styleClass="txt-info" />
                         <Label text="Email:">
                            <font>
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtEmail" prefHeight="30.0" styleClass="txt-info" />
+                        <TextField fx:id="txtEmail" prefHeight="30.0" promptText="abc@gmail.com" styleClass="txt-info" />
                      </children>
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" />
@@ -71,7 +71,7 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtTenBan" prefHeight="30.0" styleClass="txt-info" />
+                        <TextField fx:id="txtTenBan" prefHeight="30.0" promptText="Bàn x" styleClass="txt-info" />
                         <Label text="Thời gian đặt:">
                            <font>
                               <Font name="System Bold" size="12.0" />
@@ -79,7 +79,10 @@
                         </Label>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-   							    <DatePicker fx:id="dateThoiGianDat" maxWidth="1.7976931348623157E308" promptText="Chọn ngày" styleClass="date-info" />
+   							    <DatePicker fx:id="dateThoiGianDat" maxWidth="1.7976931348623157E308" promptText="Chọn ngày" styleClass="date-info">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></DatePicker>
       							<HBox spacing="10">
       							    <ComboBox fx:id="cbGio" maxWidth="1.7976931348623157E308" prefWidth="80.0" promptText="Giờ" styleClass="txt-info" HBox.hgrow="ALWAYS" />
       							    <ComboBox fx:id="cbPhut" maxWidth="1.7976931348623157E308" prefWidth="80.0" promptText="Phút" styleClass="txt-info" HBox.hgrow="ALWAYS" />
@@ -144,9 +147,9 @@
                   <Button fx:id="btnThemBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleThemBan" styleClass="btn-top" text="Thêm Bàn" HBox.hgrow="ALWAYS" />
                   <Button fx:id="btnXoaBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleXoaBan" styleClass="btn-top" text="Xóa Bàn" HBox.hgrow="ALWAYS" />
                   <Button fx:id="btnSuaBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSuaBan" styleClass="btn-top" text="Sửa Bàn" HBox.hgrow="ALWAYS" />
-                  <ComboBox fx:id="cbLocTheoTrangThai" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#handleLocTheoTrangThai" prefWidth="180.0" promptText="Lọc theo trạng thái" styleClass="cb-top" HBox.hgrow="ALWAYS">
+                  <ComboBox fx:id="cbLocTheoTrangThai" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#handleLocTheoTrangThai" prefWidth="200.0" promptText="Lọc theo trạng thái" styleClass="cb-top" HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets left="15.0" />
+                        <Insets left="10.0" />
                      </HBox.margin></ComboBox>
                </children>
             </HBox>

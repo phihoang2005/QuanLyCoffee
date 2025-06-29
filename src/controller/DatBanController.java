@@ -15,6 +15,7 @@ import entity.Ban;
 import entity.DatBan;
 import entity.KhachHang;
 import entity.TrangThaiBan;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
@@ -67,6 +68,8 @@ public class DatBanController implements Initializable {
 	    for (int i = 0; i < 60; i += 5) {
 	        cbPhut.getItems().add(i);
 	    }
+	    cbLocTheoTrangThai.setValue("Lọc theo trạng thái bàn");
+	    cbLocTheoTrangThai.getItems().addAll("Tất cả bàn","Bàn trống","Bàn đã đặt","Bàn đang phục vụ","Bàn tạm khóa");
 	}
 	private StackPane taoBan(String tenBan,TrangThaiBan trangThai) {
 		StackPane ban=new StackPane();
@@ -104,6 +107,7 @@ public class DatBanController implements Initializable {
 			for(Node n:dsBan.getChildren()) {
 				n.getStyleClass().remove("ban-selected");
 			}
+			resetform();
 			ban.getStyleClass().add("ban-selected");
 			hienThiThongTinBan(tenBan);
 			tenBanDangChon=tenBan;
@@ -140,7 +144,7 @@ public class DatBanController implements Initializable {
 			Ban temp=dsBanDB.get(i);
 			if(temp.getTrangThai().equals(TrangThaiBan.AN)) {
 				temp.setTrangThai(TrangThaiBan.TRONG);
-				bandao.capNhatTrangThaiTheoMa(temp);
+				bandao.capNhatTrangThaiTheoBan(temp);
 				capNhatDanhSachBan();
 				return;
 			}
@@ -156,7 +160,7 @@ public class DatBanController implements Initializable {
 			Ban temp=dsBanDB.get(i);
 			if(temp.getTrangThai().equals(TrangThaiBan.TRONG)) {
 				temp.setTrangThai(TrangThaiBan.AN);
-				bandao.capNhatTrangThaiTheoMa(temp);
+				bandao.capNhatTrangThaiTheoBan(temp);
 				capNhatDanhSachBan();
 				return;
 			}
@@ -178,11 +182,56 @@ public class DatBanController implements Initializable {
 	}
 	@FXML
 	private void handleLocTheoTrangThai() {
-		
+		dsBan.getChildren().clear();
+		String trangThaiDuocChon=cbLocTheoTrangThai.getValue();
+		int index=0;
+		for(Ban temp:bandao.layTatCaBan()) {
+			boolean hienthi=false;
+			switch (trangThaiDuocChon) {
+			case "Tất cả bàn": {
+				hienthi=true;
+				break;
+			}
+			case "Bàn trống": {
+				hienthi=temp.getTrangThai()==TrangThaiBan.TRONG;
+				break;
+			}
+			case "Bàn đã đặt": {
+				hienthi=temp.getTrangThai()==TrangThaiBan.DA_DAT;
+				break;
+			}
+			case "Bàn đang phục vụ": {
+				hienthi=temp.getTrangThai()==TrangThaiBan.DANG_PHUC_VU;
+				break;
+			}
+			case "Bàn tạm khóa": {
+				hienthi=temp.getTrangThai()==TrangThaiBan.TAM_KHOA;
+				break;
+			}
+			default:
+				hienthi=true;
+			}
+			
+			if(hienthi) {
+				StackPane node=taoBan(temp.getTenBan(), temp.getTrangThai());
+				int row=index/soCot;
+				int col=index%soCot;
+				dsBan.add(node, col, row);
+				GridPane.setHgrow(node, Priority.ALWAYS);
+	            GridPane.setVgrow(node, Priority.ALWAYS);
+	            index++;
+			}
+		}
+		if(index==0) {
+			dsBan.add(new Label("Không có bàn !"), 0, 0);
+		}
 	}
 	@FXML
 	private void handleHuyBan() {
-		
+		ThongBaoUtil.showXacNhan("Ban có chắc chắn muốn hủy bàn đã đặt ?",()->{
+			bandao.capNhatTrangThaiTheoTen(tenBanDangChon, TrangThaiBan.TRONG);
+			capNhatDanhSachBan();
+		});
 	}
 	@FXML
 	private void handleDatBan() {
@@ -298,7 +347,6 @@ public class DatBanController implements Initializable {
 				GridPane.setHgrow(ban, Priority.ALWAYS);
 				GridPane.setVgrow(ban, Priority.ALWAYS);
 			}
-			
 		}
 	}
 	@FXML
