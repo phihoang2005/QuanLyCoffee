@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -11,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -26,9 +29,56 @@ public class MainController implements Initializable {
 	@FXML
 	private StackPane noiDung;
 	@FXML
-	private Button btnDatBan;
-	
+	private Button btnDatBan,btnLapHoaDon,btnThanhToan,btnQuanLyMon,btnCongThucMon,btnQuanLyNguyenLieu,btnPhieuNhap,
+				   btnNhanVien,btnTaoTaiKhoan,btnPhanCongCa,btnQuanLyCa,btnHoaDon,btnBaoCaoBanHang,btnBaoCaoNguyenLieu,
+				   btnDanhSachKhuyenMai,btnGanMonKhuyenMai,btnDanhSachKhachHang,btnDatMonOnline;
+	@FXML
+	private MenuItem thongTinCaNhanItem,dangXuatItem;
 	private Button nutDangChon=null;
+	private Map<ToggleButton, VBox> nutSupVaTenFile=new HashMap<ToggleButton, VBox>();
+	private Map<Button, String> nutSubVaTenFile=new HashMap<Button, String>();
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		hideAllSubMenu();
+		nutSupVaTenFile.put(supBanHang, subBanHang);
+		nutSupVaTenFile.put(supMon, subMon);
+		nutSupVaTenFile.put(supNhanSu, subNhanSu);
+		nutSupVaTenFile.put(supDoanhThu, subDoanhThu);
+		nutSupVaTenFile.put(supKhuyenMai, subKhuyenMai);
+		nutSupVaTenFile.put(supKhachHang, subKhachHang);
+		for(ToggleButton toggle:nutSupVaTenFile.keySet()) {
+			toggle.setOnAction(event1->{
+				handleSup(toggle, nutSupVaTenFile.get(toggle));
+			});
+		}
+		
+		nutSubVaTenFile.put(btnDatBan, "DatBan");
+		nutSubVaTenFile.put(btnLapHoaDon, "LapHoaDon");
+		nutSubVaTenFile.put(btnThanhToan, "ThanhToan");
+		nutSubVaTenFile.put(btnQuanLyMon, "QuanLyMon");
+		nutSubVaTenFile.put(btnCongThucMon, "CongThucMon");
+		nutSubVaTenFile.put(btnQuanLyNguyenLieu, "QuanLyNguyenLieu");
+		nutSubVaTenFile.put(btnPhieuNhap, "PhieuNhap");
+		nutSubVaTenFile.put(btnNhanVien, "NhanVien");
+		nutSubVaTenFile.put(btnTaoTaiKhoan, "TaoTaiKhoan");
+		nutSubVaTenFile.put(btnPhanCongCa, "PhanCongCa");
+		nutSubVaTenFile.put(btnQuanLyCa, "QuanLyCa");
+		nutSubVaTenFile.put(btnHoaDon, "HoaDon");
+		nutSubVaTenFile.put(btnBaoCaoBanHang, "BaoCaoBanHang");
+		nutSubVaTenFile.put(btnBaoCaoNguyenLieu, "BaoCaoNguyenLieu");
+		nutSubVaTenFile.put(btnDanhSachKhuyenMai, "DanhSachKhuyenMai");
+		nutSubVaTenFile.put(btnGanMonKhuyenMai, "GanMonKhuyenMai");
+		nutSubVaTenFile.put(btnDanhSachKhachHang, "DanhSachKhachHang");
+		nutSubVaTenFile.put(btnDatMonOnline, "DatMonOnline");
+		for(Button button:nutSubVaTenFile.keySet()) {
+			button.setOnAction(event2->{
+				setNoiDung(nutSubVaTenFile.get(button), button);
+			});
+		}
+		
+		setNoiDung("DatBan", btnDatBan);
+	}
 	
 	private void setNoiDung(String tenFile,Button nutDuocChon) {
 		try {
@@ -93,14 +143,8 @@ public class MainController implements Initializable {
 		supKhuyenMai.setSelected(false);
 		supKhachHang.setSelected(false);
 	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
-		hideAllSubMenu();
-		handleDatBan();
-	}
 	
-	//đóng mở btn
+	//đóng mở sup
 	private void handleSup(ToggleButton toggle,VBox vbox) {
 		hideAllSubMenu();
 		boolean isSelected=toggle.isSelected();
@@ -110,37 +154,5 @@ public class MainController implements Initializable {
 			vbox.setVisible(toggle.isSelected());
 			vbox.setManaged(toggle.isSelected());
 		}
-		
-		
 	}
-	@FXML
-	private void handleSupBanHang() {
-		handleSup(supBanHang, subBanHang);
-	}
-	@FXML
-	private void handleSupMon() {
-		handleSup(supMon, subMon);
-	}
-	@FXML
-	private void handleSupNhanSu() {
-		handleSup(supNhanSu, subNhanSu);
-	}
-	@FXML
-	private void handleSupDoanhThu() {
-		handleSup(supDoanhThu, subDoanhThu);
-	}
-	@FXML
-	private void handleSupKhuyenMai() {
-		handleSup(supKhuyenMai, subKhuyenMai);
-	}
-	@FXML
-	private void handleSupKhachHang() {
-		handleSup(supKhachHang, subKhachHang);
-	}
-	
-	@FXML
-	private void handleDatBan() {
-		setNoiDung("DatBan", btnDatBan);
-	}
-	
 }
