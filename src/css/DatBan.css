@@ -1,0 +1,154 @@
+.ban-trong {
+    -fx-background-color: pink;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+
+.ban-dang-phuc-vu {
+    -fx-background-color: #FF9800;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+
+.ban-da-dat {
+    -fx-background-color: #FFEB3B;
+    -fx-text-fill: black;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+
+.ban-tam-khoa {
+    -fx-background-color: #9E9E9E;
+    -fx-text-fill: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+.ban-trong:hover {
+    -fx-background-color: #45A049; 
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-cursor: hand;
+}
+
+.ban-dang-phuc-vu:hover {
+    -fx-background-color: #FB8C00; 
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-cursor: hand;
+}
+
+.ban-da-dat:hover {
+    -fx-background-color: #FDD835;
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-cursor: hand;
+}
+
+.ban-tam-khoa:hover {
+    -fx-background-color: #757575; 
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-cursor: default; 
+}
+.ban-selected{
+	-fx-background-color: #d0f0c0;
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0.3, 0, 4);
+     -fx-background-radius: 10;
+     -fx-border-radius:  10;
+}
+.tenBan{
+	-fx-font-weight: bold;
+}
+.txt-info{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-border-color: black;
+	-fx-border-radius: 10;	
+}
+.date-info {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-border-color: black;
+    -fx-border-radius: 10;
+    -fx-padding: 0 5 0 5;
+}
+
+.date-info .text-field {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: transparent;
+    -fx-text-fill: black;
+}
+
+.date-info .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 10;
+}
+.btn-datBan{
+	-fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+.btn-datBan:hover{
+	-fx-background-color: #45A049;
+	-fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.btn-huyBan{
+	-fx-background-color: #F44336;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0.3, 4, 4);
+}
+.btn-huyBan:hover{
+	-fx-background-color: #D32F2F;
+	-fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+.vbox-info{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0.3, 0, 4);
+}
+.btn-top{
+	-fx-background-color: black;
+	-fx-background-radius: 10;
+	-fx-text-fill:white;
+	-fx-font-weight: bold;
+}
+.btn-top:hover{
+	-fx-background-color: #cccccc;
+	-fx-text-fill:black;
+	-fx-scale-x: 1.03;
+	-fx-scale-y: 1.03;
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 12, 0.3, 0, 4);
+}
+.cb-top{
+	-fx-background-color: white;
+	-fx-background-radius: 10;
+	-fx-font-weight: bold;
+	-fx-border-color: black;
+	-fx-border-radius: 10;
+}
+.scroll .thumb{
+	-fx-background-color: #888;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5px;
+}
+.loi{
+	 -fx-border-color: #e53935; 
+    -fx-background-color: linear-gradient(to bottom, #fff5f5, #ffe6e6);
+    -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.2), 4, 0.3, 1, 1);
+}

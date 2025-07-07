@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="617.0" prefWidth="833.0" styleClass="noiDung" stylesheets="@../css/DatBan.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DatBanController">
+   <children>
+      <BorderPane style="-fx-background-color: #ececec;">
+         <right>
+            <AnchorPane prefWidth="240.0" style="-fx-background-color: white; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="40.0" prefWidth="222.0" text="THÔNG TIN BÀN" textAlignment="CENTER" AnchorPane.bottomAnchor="587.2" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <VBox styleClass="vbox-info" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="40.0">
+                     <children>
+                        <Label prefHeight="30.0" text="Thông tin khách hàng">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Số điện thoại:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtSoDienThoai" onKeyPressed="#pressSoDienThoai" prefHeight="30.0" promptText="0123456789" styleClass="txt-info" />
+                        <Label text="Tên khách hàng:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTenKhachHang" prefHeight="30.0" promptText="Nguyễn Văn A" styleClass="txt-info" />
+                        <Label text="Email:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail" prefHeight="30.0" promptText="abc@gmail.com" styleClass="txt-info" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox styleClass="vbox-info" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="240.0">
+                     <children>
+                        <Label prefHeight="30.0" text="Thông tin đặt bàn">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Tên bàn:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtTenBan" prefHeight="30.0" promptText="Bàn x" styleClass="txt-info" />
+                        <Label text="Thời gian đặt:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+   							    <DatePicker fx:id="dateThoiGianDat" maxWidth="1.7976931348623157E308" promptText="Chọn ngày" styleClass="date-info">
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" />
+                                 </VBox.margin></DatePicker>
+      							<HBox spacing="10">
+      							    <ComboBox fx:id="cbGio" maxWidth="1.7976931348623157E308" prefWidth="80.0" promptText="Giờ" styleClass="txt-info" HBox.hgrow="ALWAYS" />
+      							    <ComboBox fx:id="cbPhut" maxWidth="1.7976931348623157E308" prefWidth="80.0" promptText="Phút" styleClass="txt-info" HBox.hgrow="ALWAYS" />
+      							</HBox>
+                           </children>
+                        </VBox>
+                        <Label text="Ghi chú:">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtGhiChu" prefHeight="30.0" styleClass="txt-info" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox prefHeight="35.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0">
+                     <children>
+                        <Button fx:id="btnHuyBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleHuyBan" styleClass="btn-huyBan" text="Hủy Bàn" HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnDatBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleDatBan" styleClass="btn-datBan" text="Đặt Bàn" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <ImageView fitHeight="130.0" fitWidth="220.0" pickOnBounds="true" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="450.0">
+                     <image>
+                        <Image url="@../image/ban1.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="5.0" />
+               </BorderPane.margin></AnchorPane>
+         </right>
+         <center>
+         <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" style="-fx-background-color: white; -fx-background-radius: 10;" styleClass="scroll">
+            <GridPane fx:id="dsBan" hgap="15" style="-fx-background-color: white; -fx-background-radius: 10;" vgap="15" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+             
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </BorderPane.margin>
+            </GridPane>
+          </ScrollPane>
+         </center>
+         <top>
+            <HBox prefHeight="50.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="5.0" right="5.0" top="5.0" />
+               </padding>
+               <children>
+                  <Button fx:id="btnGopBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleGopBan" styleClass="btn-top" text="Gộp Bàn" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnTachBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleTachBan" styleClass="btn-top" text="Tách Bàn" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnThemBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleThemBan" styleClass="btn-top" text="Thêm Bàn" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnXoaBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleXoaBan" styleClass="btn-top" text="Xóa Bàn" HBox.hgrow="ALWAYS" />
+                  <Button fx:id="btnSuaBan" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleSuaBan" styleClass="btn-top" text="Sửa Bàn" HBox.hgrow="ALWAYS" />
+                  <ComboBox fx:id="cbLocTheoTrangThai" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#handleLocTheoTrangThai" prefWidth="200.0" promptText="Lọc theo trạng thái" styleClass="cb-top" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></ComboBox>
+               </children>
+            </HBox>
+         </top>
+      </BorderPane>
+   </children>
+</StackPane>

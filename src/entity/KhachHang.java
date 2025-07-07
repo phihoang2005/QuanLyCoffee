@@ -24,6 +24,7 @@ public class KhachHang {
 		this.diemTichLuy = diemTichLuy;
 		this.ngayDangKy = ngayDangKy;
 	}
+	
 
 	public String getMaKhachHang() {
 		return maKhachHang;

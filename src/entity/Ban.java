@@ -3,13 +3,13 @@ package entity;
 public class Ban {
 	private String maBan;
 	private String tenBan;
-	private String trangThai;
+	private TrangThaiBan trangThai;
 	
 	public Ban() {
-		this("", "", "");
+		this("", "", TrangThaiBan.TRONG);
 	}
 
-	public Ban(String maBan, String tenBan, String trangThai) {
+	public Ban(String maBan, String tenBan, TrangThaiBan trangThai) {
 		super();
 		this.maBan = maBan;
 		this.tenBan = tenBan;
@@ -32,11 +32,11 @@ public class Ban {
 		this.tenBan = tenBan;
 	}
 
-	public String getTrangThai() {
+	public TrangThaiBan getTrangThai() {
 		return trangThai;
 	}
 
-	public void setTrangThai(String trangThai) {
+	public void setTrangThai(TrangThaiBan trangThai) {
 		this.trangThai = trangThai;
 	}
 
